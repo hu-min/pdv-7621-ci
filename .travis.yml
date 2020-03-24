@@ -12,7 +12,7 @@ env:
 
 addons:
     apt:
-      packages: [ fakeroot, p7zip-full, libtool-bin, gperf, texinfo, python-docutils, autopoint, nano ]
+      packages: [ fakeroot, p7zip-full, libtool-bin, gperf, texinfo, python-docutils, autopoint ]
 
 before_script:
     - cd /opt && git clone --depth=1 https://github.com/BinTing/rt-n56u.git
