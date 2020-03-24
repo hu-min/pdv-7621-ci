@@ -7,7 +7,7 @@ compiler:
 
 env:
     global:
-      - targets="K2P K2P_nano K2P_nano-5.0"
+      - targets="K2P-SELF"
       - toolchain_url="https://github.com/hanwckf/padavan-toolchain/releases/download/v1.1/mipsel-linux-uclibc.tar.xz"
 
 addons:
@@ -15,7 +15,7 @@ addons:
       packages: [ fakeroot, p7zip-full, libtool-bin, gperf, texinfo, python-docutils, autopoint ]
 
 before_script:
-    - cd /opt && git clone --depth=1 https://github.com/hanwckf/rt-n56u.git
+    - cd /opt && git clone --depth=1 https://github.com/BinTing/rt-n56u.git
     - rm -rf ./rt-n56u/toolchain-mipsel/ && mkdir -p ./rt-n56u/toolchain-mipsel/toolchain-3.4.x && mkdir -p ./images
     - wget $toolchain_url && tar -xf mipsel-linux-uclibc.tar.xz -C ./rt-n56u/toolchain-mipsel/toolchain-3.4.x
     - ls -Alh /opt/rt-n56u && cd /opt/rt-n56u/trunk/
